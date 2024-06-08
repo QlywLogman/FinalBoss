@@ -1,0 +1,85 @@
+﻿<Page x:Class="FinalBoss.Views.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalBoss.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="600"
+      Title="RegisterPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" ></ColumnDefinition>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--<Image Source="pictures\add.png" Grid.Row="0" Grid.Column="0" Width="70" Height="70"/>-->
+            <Label Grid.Row="0" Grid.Column="1" Content=" Register" Width="200" Height="65" 
+                   FontSize="50" FontFamily="Times New Roman"></Label>
+        </Grid>
+
+        <Label Grid.Row="1" Grid.Column="1" Content="   Name :" Width="200" Height="30" 
+                   FontSize="16" FontFamily="Times New Roman"></Label>
+
+        <TextBox Name="ErtRegName" Grid.Row="2" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
+                   FontSize="16" Text="{Binding Name}"></TextBox>
+
+        <Label Grid.Row="3" Grid.Column="1" Content="  Surname :" Width="200" Height="30" 
+                   FontSize="16" FontFamily="Times New Roman"></Label>
+
+        <TextBox Name="ErtRegSurName" Grid.Row="4" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
+                   FontSize="16" Text="{Binding Surname}"></TextBox>
+
+        <Label Grid.Row="5" Grid.Column="1" Content="   Gmail :" Width="200" Height="30" 
+                   FontSize="16" FontFamily="Times New Roman"></Label>
+
+        <TextBox Name="ErtRegGmail" Grid.Row="6" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
+                   FontSize="16" Text="{Binding Gmail}" ></TextBox>
+
+        <Label Grid.Row="7" Grid.Column="1" Content="   Password :" Width="200" Height="30" 
+                   FontSize="16" FontFamily="Times New Roman"></Label>
+
+        <TextBox Name="ErtRegPasworld" Grid.Row="8" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
+                   FontSize="16" Text="{Binding Password}"></TextBox>
+
+        <Label Grid.Row="9" Grid.Column="1" Content="   Age :" Width="200" Height="30" 
+                   FontSize="16" FontFamily="Times New Roman"></Label>
+
+        <TextBox Name="ErtRegAge" Grid.Row="10" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
+                   FontSize="16" Text="{Binding Age}"></TextBox>
+
+        <Grid Grid.Row="11" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210" ></ColumnDefinition>
+                <ColumnDefinition Width="140" ></ColumnDefinition>
+                <ColumnDefinition Width="140" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Grid.Row="9" Grid.Column="1" Width="150" Height="30"  FontSize="16" FontFamily="Times New Roman" 
+                             GroupName="GrupWORoVAN" Content="Employer" IsChecked="{Binding IsSelectedEmployer, Mode=TwoWay}"/>
+            <RadioButton Grid.Column="2" Width="150" Height="30"  FontSize="16" FontFamily="Times New Roman" 
+                             GroupName="GrupWORoVAN" Content="Worker" Margin="0,2,0,0" VerticalAlignment="Top" IsChecked="{Binding IsSelectedWorker, Mode=TwoWay}"/>
+        </Grid>
+
+        <Button Grid.Row="12"  FontFamily="Times New Roman" Grid.Column="0" Content="Register" Width="200" Height="30" 
+                   FontSize="20" Command="{Binding WriteRegFile}"></Button>
+    </Grid>
+</Page>

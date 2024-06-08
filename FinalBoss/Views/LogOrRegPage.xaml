@@ -11,22 +11,52 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" ></RowDefinition>
-            <RowDefinition Height="200" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="105" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="35" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
 
         <Image Source="pack://application:,,,/FinalBoss;component/Pictures/login.png" 
-               Grid.Row="1" Width="180" Height="180"/>
+               Grid.Row="1" Width="100" Height="100"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Width="120" Height="30" 
-                    FontFamily="Times New Roman" Content="Login" FontSize="20">
+        <Label Grid.Row="2" Grid.Column="0" Content=" Name : " Width="150" Height="28" 
+                 FontSize="16" FontFamily="Times New Roman" ></Label>
+
+        <TextBox Grid.Row="3" Grid.Column="0" FontFamily="Times New Roman" Width="150" Height="25" 
+                 FontSize="16"></TextBox>
+
+        <Label Grid.Row="4" Grid.Column="0" Content=" Pasworld : " Width="150" Height="28" 
+                 FontSize="16" FontFamily="Times New Roman" ></Label>
+
+        <TextBox Grid.Row="5" Grid.Column="0" FontFamily="Times New Roman" Width="150" Height="25" 
+                 FontSize="16"></TextBox>
+
+        <Grid Grid.Row="6" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" ></ColumnDefinition>
+                <ColumnDefinition Width="140" ></ColumnDefinition>
+                <ColumnDefinition Width="140" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Grid.Row="9" Grid.Column="1" Width="120" Height="25"  FontSize="16" FontFamily="Times New Roman" 
+                           GroupName="GrupWORoVAN" Content="Employer"/>
+            <RadioButton Grid.Row="9" Grid.Column="2" Width="120" Height="25"  FontSize="16" FontFamily="Times New Roman" 
+                           GroupName="GrupWORoVAN" Content="Worker"/>
+        </Grid>
+
+        <Button Grid.Row="7" Grid.Column="0" Width="120" Height="23" 
+                    FontFamily="Times New Roman" Content="Login" FontSize="14">
         </Button>
 
-        <Button Grid.Row="3" Grid.Column="0" Width="120" Height="30" 
-                    FontFamily="Times New Roman" Content="Register" FontSize="20">
+        <Button Grid.Row="8" Grid.Column="0" Width="120" Height="23" 
+                    FontFamily="Times New Roman" Content="Register" FontSize="14" Command="{Binding RegisterOpenCommand}">
         </Button>
 
 

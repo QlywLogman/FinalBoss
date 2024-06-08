@@ -34,10 +34,6 @@ public class MainWindowViewModel : ViewModel , INotifyPropertyChanged
     }
 
 
-
-
-
-
     //-------------------------------------------------------------
     public event PropertyChangedEventHandler? PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string? paramName = null)

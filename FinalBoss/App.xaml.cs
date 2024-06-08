@@ -12,7 +12,6 @@ using System.Windows;
 
 namespace FinalBoss;
 
-
 public partial class App : Application
 {
     public static Container MainContainer { get; set; } = new();
@@ -33,14 +32,14 @@ public partial class App : Application
     {
         MainContainer.RegisterSingleton<MainWindowViewModel>();
         MainContainer.RegisterSingleton<LogOrRegPageModel>();
-
+        MainContainer.RegisterSingleton<RegisterPageViewModel>();
     }
 
     private void AddViews()
     {
         MainContainer.RegisterSingleton<MainWindow>();
         MainContainer.RegisterSingleton<LogOrRegPage>();
-
+        MainContainer.RegisterSingleton<RegisterPage>();
     }
 
     protected override void OnStartup(StartupEventArgs e)
