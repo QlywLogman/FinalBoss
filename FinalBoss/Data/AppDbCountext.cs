@@ -19,13 +19,13 @@ namespace FinalBoss.Data
 
         public AppDbContext()
         {
-            FILENAME = "CvJson.json";
-            if (Path.Exists(FILENAME))
-            {   
+            FILENAME = "Register.json";
+            if (File.Exists(FILENAME))
+            {
                 var json = File.ReadAllText(FILENAME);
                 Items = JsonSerializer.Deserialize<ObservableCollection<RegisterClass>>(json)!;
             }
-            else Items = new();
+            else Items = new ObservableCollection<RegisterClass>();
         }
 
         public void SaveChanges()

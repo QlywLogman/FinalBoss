@@ -11,56 +11,58 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90" ></RowDefinition>
+            <RowDefinition Height="25" ></RowDefinition>
             <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="25" ></RowDefinition>
             <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="25" ></RowDefinition>
             <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="25" ></RowDefinition>
             <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="25" ></RowDefinition>
             <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
+                <ColumnDefinition Width="160" ></ColumnDefinition>
+                <ColumnDefinition Width="100" ></ColumnDefinition>
+                <ColumnDefinition Width="210" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <!--<Image Source="pictures\add.png" Grid.Row="0" Grid.Column="0" Width="70" Height="70"/>-->
-            <Label Grid.Row="0" Grid.Column="1" Content=" Register" Width="200" Height="65" 
+            <Image Source="pack://application:,,,/FinalBoss;component/Pictures/check.png" 
+               Grid.Row="1" Grid.Column="1" Width="60" Height="60"/>
+            <Label Grid.Row="0" Grid.Column="2" Content=" Register" Width="200" Height="65" 
                    FontSize="50" FontFamily="Times New Roman"></Label>
         </Grid>
 
-        <Label Grid.Row="1" Grid.Column="1" Content="   Name :" Width="200" Height="30" 
+        <Label Grid.Row="1" Grid.Column="1" Content="   Name :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
 
         <TextBox Name="ErtRegName" Grid.Row="2" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
                    FontSize="16" Text="{Binding Name}"></TextBox>
 
-        <Label Grid.Row="3" Grid.Column="1" Content="  Surname :" Width="200" Height="30" 
+        <Label Grid.Row="3" Grid.Column="1" Content="  Surname :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
 
         <TextBox Name="ErtRegSurName" Grid.Row="4" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
                    FontSize="16" Text="{Binding Surname}"></TextBox>
 
-        <Label Grid.Row="5" Grid.Column="1" Content="   Gmail :" Width="200" Height="30" 
+        <Label Grid.Row="5" Grid.Column="1" Content="   Gmail :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
 
         <TextBox Name="ErtRegGmail" Grid.Row="6" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
                    FontSize="16" Text="{Binding Gmail}" ></TextBox>
 
-        <Label Grid.Row="7" Grid.Column="1" Content="   Password :" Width="200" Height="30" 
+        <Label Grid.Row="7" Grid.Column="1" Content="   Password :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
 
         <TextBox Name="ErtRegPasworld" Grid.Row="8" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
                    FontSize="16" Text="{Binding Password}"></TextBox>
 
-        <Label Grid.Row="9" Grid.Column="1" Content="   Age :" Width="200" Height="30" 
+        <Label Grid.Row="9" Grid.Column="1" Content="   Age :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
 
         <TextBox Name="ErtRegAge" Grid.Row="10" Grid.Column="2" FontFamily="Times New Roman" Width="200" Height="30" 
@@ -68,14 +70,14 @@
 
         <Grid Grid.Row="11" Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="210" ></ColumnDefinition>
+                <ColumnDefinition Width="205" ></ColumnDefinition>
                 <ColumnDefinition Width="140" ></ColumnDefinition>
                 <ColumnDefinition Width="140" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <RadioButton Grid.Row="9" Grid.Column="1" Width="150" Height="30"  FontSize="16" FontFamily="Times New Roman" 
+            <RadioButton Grid.Row="9" Grid.Column="1" Width="140" Height="30"  FontSize="16" FontFamily="Times New Roman" 
                              GroupName="GrupWORoVAN" Content="Employer" IsChecked="{Binding IsSelectedEmployer, Mode=TwoWay}"/>
-            <RadioButton Grid.Column="2" Width="150" Height="30"  FontSize="16" FontFamily="Times New Roman" 
+            <RadioButton Grid.Column="2" Width="140" Height="30"  FontSize="16" FontFamily="Times New Roman" 
                              GroupName="GrupWORoVAN" Content="Worker" Margin="0,2,0,0" VerticalAlignment="Top" IsChecked="{Binding IsSelectedWorker, Mode=TwoWay}"/>
         </Grid>
 
