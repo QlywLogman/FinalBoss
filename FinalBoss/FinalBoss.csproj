@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pictures\16636068553.png" />
     <None Remove="Pictures\check.png" />
+    <None Remove="Pictures\delete.png" />
+    <None Remove="Pictures\globe.png" />
     <None Remove="Pictures\login.png" />
   </ItemGroup>
 
@@ -19,7 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Pictures\16636068553.png" />
     <Resource Include="Pictures\check.png" />
+    <Resource Include="Pictures\delete.png" />
+    <Resource Include="Pictures\globe.png" />
     <Resource Include="Pictures\login.png" />
   </ItemGroup>
 

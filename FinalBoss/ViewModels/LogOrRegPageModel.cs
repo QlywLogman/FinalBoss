@@ -11,7 +11,7 @@ namespace FinalBoss.ViewModels
 {
     public class LogOrRegPageModel : ViewModel, INotifyPropertyChanged
     {
-        public readonly AppDbContext appDbContext;
+        private readonly AppDbContext appDbContext = new AppDbContext();
         private Page? currentPage;
         private string name;
         private string password;
@@ -42,17 +42,24 @@ namespace FinalBoss.ViewModels
 
         private void LogIn(object? obj)
         {
+
             var accessMode = (IsSelectedEmployer ? "Employer" : "Worker");
             var user = appDbContext.Items.FirstOrDefault(n => n.Name == Name && n.Password == Password && n.AccessMode == accessMode);
             if (user != null)
             {
                 if (accessMode == "Worker")
                 {
-                    MessageBox.Show("Worker");
+                    IsSelectedEmployer = false;
+                    IsSelectedWorker = false;
+                    navigationService.Navigate<WorkerCvPage, WorkerCvViewModel>();
                 }
                 if (accessMode == "Employer")
                 {
-                    MessageBox.Show("Employer");
+                    Name = "";
+                    password = "";
+                    IsSelectedEmployer = false;
+                    IsSelectedWorker = false;
+                    navigationService.Navigate<EmployerVacansiaPage, EmployerVacansiaViewModel>();
                 }
             }
             else

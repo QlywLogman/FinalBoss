@@ -11,21 +11,21 @@ using System.Threading.Tasks;
 
 namespace FinalBoss.Data
 {
-    public class AppDbContext : Entity
+    public class AppDbCountextVacansia : Entity
     {
-        public ObservableCollection<RegisterClass> Items { get; set; } = new();
+        public ObservableCollection<VacansiaClass> Items { get; set; } = new();
 
         private string FILENAME { get; set; }
 
-        public AppDbContext()
+        public AppDbCountextVacansia()
         {
-            FILENAME = "Register.json";
+            FILENAME = "Vacansia.json";
             if (File.Exists(FILENAME))
             {
                 var json = File.ReadAllText(FILENAME);
-                Items = JsonSerializer.Deserialize<ObservableCollection<RegisterClass>>(json)!;
+                Items = JsonSerializer.Deserialize<ObservableCollection<VacansiaClass>>(json)!;
             }
-            else Items = new ObservableCollection<RegisterClass>();
+            else Items = new ObservableCollection<VacansiaClass>();
         }
 
         public void SaveChanges()
@@ -34,19 +34,19 @@ namespace FinalBoss.Data
             File.WriteAllText(FILENAME, json);
         }
 
-        public RegisterClass? GetItem(string ItemId)
+        public VacansiaClass? GetItem(string ItemId)
         {
             return Items.FirstOrDefault(p => p.Id == ItemId);
         }
-        public void AddItem(RegisterClass item) => Items.Add(item);
-        public void RemoveItemt(RegisterClass item) => Items.Remove(item);
+        public void AddItem(VacansiaClass item) => Items.Add(item);
+        public void RemoveItemt(VacansiaClass item) => Items.Remove(item);
         public void RemoveItem(string id)
         {
             var item = Items.FirstOrDefault(x => x.Id == id);
             if (item is not null)
                 Items.Remove(item);
         }
-        public void UpdateItem(RegisterClass item)
+        public void UpdateItem(VacansiaClass item)
         {
             RemoveItem(item.Id);
             Items.Add(item);

@@ -16,7 +16,7 @@ namespace FinalBoss.ViewModels
 {
     public class RegisterPageViewModel : ViewModel, INotifyPropertyChanged
     {
-        public readonly AppDbContext appDbContext;
+        public AppDbContext appDbContext = new AppDbContext();
 
         private Page? currentPage;
         private string name;
@@ -45,7 +45,7 @@ namespace FinalBoss.ViewModels
         public RelayCommand WriteRegFile { get; set; }
 
 
-        public RegisterPageViewModel(INavigationService navigationService, AppDbContext dbContext)
+        public RegisterPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
             WriteRegFile = new(Add);
@@ -63,8 +63,16 @@ namespace FinalBoss.ViewModels
                 Age = Age,
                 AccessMode = (IsSelectedEmployer ? "Employer" : "Worker")
             };
-            appDbContext.Items.Add(Register);
+            appDbContext.AddItem(Register);
             appDbContext.SaveChanges();
+
+            Name = "";
+            Surname = "";
+            Gmail = "";
+            Password = "";
+            Age = 0;
+            IsSelectedEmployer = false;
+            IsSelectedWorker = false;
         }
 
         private void RegOpen(object? obj)
