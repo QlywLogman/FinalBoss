@@ -39,11 +39,11 @@
                    FontSize="40" FontFamily="Times New Roman"></Label>
 
             <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="0" Width="35" Height="35" 
-        FontSize="30" Style="{DynamicResource MaterialDesignPaperLightButton}" Command="{Binding logORregGo}">
+        FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding logORregGo}">
                 <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
             </Button>
             <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="1" Width="35" Height="35" 
-                   FontSize="30" Style="{DynamicResource MaterialDesignPaperLightButton}" Command="{Binding VacansiaDeleteGo}">
+                   FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding VacansiaDeleteGo}">
                 <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
             </Button>
 
@@ -58,20 +58,20 @@
                 <ColumnDefinition Width="*" ></ColumnDefinition>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <Label Grid.Row="1" Grid.Column="0" Content="   Name :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
 
             <Label Grid.Row="1" Grid.Column="1" Content="   Title :" Width="200" Height="23" 
                    FontSize="16" FontFamily="Times New Roman"></Label>
         </Grid>
-        
+
         <Grid Grid.Row="3" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <TextBox Name="VacansiaName" Grid.Row="2" Grid.Column="0" FontFamily="Times New Roman" Width="200" Height="30" 
                    FontSize="16" Text="{Binding Name}"></TextBox>
 

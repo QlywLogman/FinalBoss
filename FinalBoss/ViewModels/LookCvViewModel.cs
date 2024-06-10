@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace FinalBoss.ViewModels
 {
-    public class WorkerCvViewModel : ViewModel, INotifyPropertyChanged
+    public class LookCvViewModel : ViewModel, INotifyPropertyChanged
     {
+
 
 
         //-----------------------------------------------------

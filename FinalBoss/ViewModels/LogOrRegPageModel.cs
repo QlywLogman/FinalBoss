@@ -56,7 +56,7 @@ namespace FinalBoss.ViewModels
                 if (accessMode == "Employer")
                 {
                     Name = "";
-                    password = "";
+                    Password = "";
                     IsSelectedEmployer = false;
                     IsSelectedWorker = false;
                     navigationService.Navigate<EmployerVacansiaPage, EmployerVacansiaViewModel>();

@@ -9,37 +9,52 @@
       Title="DeleteVacansiaPage">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="65" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="80" ></RowDefinition>
             <RowDefinition Height="30" ></RowDefinition>
             <RowDefinition Height="35" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="2" Grid.Column="0">
+        <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="170" ></ColumnDefinition>
+                <ColumnDefinition Width="80" ></ColumnDefinition>
+                <ColumnDefinition Width="60" ></ColumnDefinition>
                 <ColumnDefinition Width="60" ></ColumnDefinition>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
                 <ColumnDefinition Width="170" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="13" FontFamily="Times New Roman" Grid.Column="1" Width="50" Height="50" 
-        FontSize="30" Style="{DynamicResource MaterialDesignPaperLightButton}" Command="{Binding VacansiaDelete}"
+            <Button Grid.Row="13" FontFamily="Times New Roman" Grid.Column="2" Width="50" Height="50" 
+        FontSize="30" Style="{DynamicResource MaterialDesignFloatingActionMiniLightButton}" Command="{Binding VacansiaDelete}"
         HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Image Source="pack://application:,,,/FinalBoss;component/Pictures/delete.png" Width="30" Height="30" 
            HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Button>
 
-            <Label Grid.Row="0" Grid.Column="2" Content="Delete vacansia" Width="240" Height="50" 
+            <Label Grid.Row="0" Grid.Column="3" Content="Delete vacansia" Width="240" Height="50" 
                    FontSize="35" FontFamily="Times New Roman"></Label>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="0" Width="35" Height="35" 
+        FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding CreateVacansiaGo}">
+                    <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
+                </Button>
+                <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="1" Width="35" Height="35" 
+                   FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding LookCvGo}">
+                    <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
+                </Button>
+            </Grid>
         </Grid>
         
-        <Label Grid.Row="3" Grid.Column="0" Content=" Name : " Width="150" Height="28" 
+        <Label Grid.Row="1" Grid.Column="0" Content=" Name : " Width="150" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
 
-        <TextBox Grid.Row="4" Grid.Column="0" FontFamily="Times New Roman" Width="150" Height="25" 
+        <TextBox Grid.Row="2" Grid.Column="0" FontFamily="Times New Roman" Width="150" Height="25" 
                  FontSize="16" Text="{Binding Name}"></TextBox>
     </Grid>
 </Page>

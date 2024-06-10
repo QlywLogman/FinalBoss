@@ -49,7 +49,6 @@ namespace FinalBoss.ViewModels
         {
             this.navigationService = navigationService;
             WriteRegFile = new(Add);
-            WriteRegFile = new(RegOpen);
         }
 
         private void Add(object? obj)
