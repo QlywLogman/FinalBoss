@@ -1,4 +1,4 @@
-﻿<Page x:Class="FinalBoss.Views.LookCvPage"
+﻿<Page x:Class="FinalBoss.Views.LookAtVacansia"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FinalBoss.Views"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="650"
-      Title="LookCvPage">
+      Title="LookAtVacansia">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                  FontSize="20"></TextBox>
 
             <Button Grid.Row="0" FontFamily="Times New Roman" Grid.Column="3" Width="40" Height="40" 
-        FontSize="30" Style="{DynamicResource MaterialDesignFloatingActionMiniLightButton}" Command="{Binding ShowCvs}"
+        FontSize="30" Style="{DynamicResource MaterialDesignFloatingActionMiniLightButton}" Command="{Binding ShowVacansias}"
         HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Image Source="pack://application:,,,/FinalBoss;component/Pictures/search.png" Width="40" Height="40" 
            HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -41,16 +41,16 @@
                     <ColumnDefinition Width="*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="0" Width="35" Height="35" 
-        FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding DeleteCanacsiaBack}">
+        FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding DeleteCvBack}">
                     <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
                 </Button>
                 <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="1" Width="35" Height="35" 
-                   FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding WriteNotfication}">
+                   FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding LookNotfication}">
                     <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
                 </Button>
             </Grid>
         </Grid>
-        
+
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
@@ -64,26 +64,26 @@
             <Label Grid.Row="0" Grid.Column="0" Content="Name             |" Width="100" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="1" Content="Field              |" Width="100" Height="28" 
+            <Label Grid.Row="0" Grid.Column="1" Content="Title              |" Width="100" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="2" Content="Univerted     |" Width="100" Height="28" 
+            <Label Grid.Row="0" Grid.Column="2" Content="Salary     |" Width="100" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="3" Content="Languages     |" Width="100" Height="28" 
+            <Label Grid.Row="0" Grid.Column="3" Content="Location     |" Width="100" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="4" Content="Dawn           |" Width="100" Height="28" 
+            <Label Grid.Row="0" Grid.Column="4" Content="JobType         |" Width="100" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="5" Content="Phone           " Width="100" Height="28" 
+            <Label Grid.Row="0" Grid.Column="5" Content="ContactEmail           " Width="100" Height="28" 
                  FontSize="16" FontFamily="Times New Roman" ></Label>
         </Grid>
-        
+
         <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" 
                    Height="2" Fill="Black" VerticalAlignment="Top" Margin="0,5"/>
 
-        <ListView Grid.Row="3" Grid.Column="0" Width="650" Height="430" ItemsSource="{Binding appDbCountextCv.Items}">
+        <ListView Grid.Row="3" Grid.Column="0" Width="650" Height="430" ItemsSource="{Binding appDbCountextVacansia.Items}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="5">
@@ -96,11 +96,11 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="{Binding Name}" />
-                        <TextBlock Grid.Column="1" Text="{Binding Field}" />
-                        <TextBlock Grid.Column="2" Text="{Binding Univerted}" />
-                        <TextBlock Grid.Column="3" Text="{Binding Languages}" />
-                        <TextBlock Grid.Column="4" Text="{Binding Dawn}" />
-                        <TextBlock Grid.Column="5" Text="{Binding Phone}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Title}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Salary}" />
+                        <TextBlock Grid.Column="3" Text="{Binding Location}" />
+                        <TextBlock Grid.Column="4" Text="{Binding JobType}" />
+                        <TextBlock Grid.Column="5" Text="{Binding ContactEmail}" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -13,9 +13,9 @@ using System.Windows.Controls;
 
 namespace FinalBoss.ViewModels
 {
-    public class LookCvViewModel : ViewModel, INotifyPropertyChanged
+    public class LookAtVacansiaViewModel : ViewModel, INotifyPropertyChanged
     {
-        public AppDbCountextCv AppDbCountextCv = new AppDbCountextCv();
+        public AppDbCountextVacansia AppDbCountextVacansia = new AppDbCountextVacansia();
 
         private Page? currentPage;
 
@@ -26,34 +26,34 @@ namespace FinalBoss.ViewModels
         }
 
         private readonly INavigationService navigationService;
-        public RelayCommand ShowCvs { get; set; }
-        public RelayCommand DeleteCanacsiaBack { get; set; }
-        public RelayCommand WriteNotfication { get; set; }
+        public RelayCommand ShowVacansias { get; set; }
+        public RelayCommand DeleteCvBack { get; set; }
+        public RelayCommand LookNotfication { get; set; }
 
-        public LookCvViewModel(INavigationService navigationService)
+        public LookAtVacansiaViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
-            ShowCvs = new(Show);
-            DeleteCanacsiaBack = new(DeleteVacansiaBack);
-            WriteNotfication = new(WriteNot);
+            ShowVacansias = new(ShowVac);
+            DeleteCvBack = new(DelCvBack);
+            LookNotfication = new(LookNot);
         }
 
-        private void Show(object? obj)
+        private void ShowVac(object? obj)
         {
 
         }
 
-        private void DeleteVacansiaBack(object? obj)
+        private void DelCvBack(object? obj)
         {
             //-----------------------------------------------------
-            navigationService.Navigate<DeleteVacansiaPage, DeleteVacansiaViewModel>();
+            navigationService.Navigate<DeleteCvPage, DeleteCvViewModel>();
             //-----------------------------------------------------
         }
 
-        private void WriteNot(object? obj)
+        private void LookNot(object? obj)
         {
             //-----------------------------------------------------
-            navigationService.Navigate<NotficationPage, NotficationViewModel>();
+            navigationService.Navigate<LookNotficationPage, LookNotficationViewModel>();
             //-----------------------------------------------------
         }
 

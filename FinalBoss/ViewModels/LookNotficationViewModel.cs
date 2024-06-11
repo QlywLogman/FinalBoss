@@ -13,9 +13,9 @@ using System.Windows.Controls;
 
 namespace FinalBoss.ViewModels
 {
-    public class LookCvViewModel : ViewModel, INotifyPropertyChanged
+    public class LookNotficationViewModel : ViewModel, INotifyPropertyChanged
     {
-        public AppDbCountextCv AppDbCountextCv = new AppDbCountextCv();
+        public AppDbCountextNotfication AppDbCountextNotfication = new AppDbCountextNotfication();
 
         private Page? currentPage;
 
@@ -26,38 +26,27 @@ namespace FinalBoss.ViewModels
         }
 
         private readonly INavigationService navigationService;
-        public RelayCommand ShowCvs { get; set; }
-        public RelayCommand DeleteCanacsiaBack { get; set; }
-        public RelayCommand WriteNotfication { get; set; }
+        public RelayCommand ShowNotfications { get; set; }
+        public RelayCommand LookVacansiaBack { get; set; }
 
-        public LookCvViewModel(INavigationService navigationService)
+        public LookNotficationViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
-            ShowCvs = new(Show);
-            DeleteCanacsiaBack = new(DeleteVacansiaBack);
-            WriteNotfication = new(WriteNot);
+            ShowNotfications = new(ShowNot);
+            LookVacansiaBack = new(LookVacBack);
         }
 
-        private void Show(object? obj)
+        private void ShowNot(object? obj)
         {
 
         }
 
-        private void DeleteVacansiaBack(object? obj)
+        private void LookVacBack(object? obj)
         {
             //-----------------------------------------------------
-            navigationService.Navigate<DeleteVacansiaPage, DeleteVacansiaViewModel>();
+            navigationService.Navigate<LookAtVacansia, LookAtVacansiaViewModel>();
             //-----------------------------------------------------
         }
-
-        private void WriteNot(object? obj)
-        {
-            //-----------------------------------------------------
-            navigationService.Navigate<NotficationPage, NotficationViewModel>();
-            //-----------------------------------------------------
-        }
-
-
 
         //-----------------------------------------------------
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -11,21 +11,21 @@ using System.Threading.Tasks;
 
 namespace FinalBoss.Data
 {
-    public class AppDbCountextCv : Entity
+    public class AppDbCountextNotfication : Entity
     {
-        public ObservableCollection<CVclass> Items { get; set; } = new();
+        public ObservableCollection<Notfication> Items { get; set; } = new();
 
         private string FILENAME { get; set; }
 
-        public AppDbCountextCv()
+        public AppDbCountextNotfication()
         {
-            FILENAME = "Cv.json";
+            FILENAME = "Notfication.json";
             if (File.Exists(FILENAME))
             {
                 var json = File.ReadAllText(FILENAME);
-                Items = JsonSerializer.Deserialize<ObservableCollection<CVclass>>(json)!;
+                Items = JsonSerializer.Deserialize<ObservableCollection<Notfication>>(json)!;
             }
-            else Items = new ObservableCollection<CVclass>();
+            else Items = new ObservableCollection<Notfication>();
         }
 
         public void SaveChanges()
@@ -34,23 +34,22 @@ namespace FinalBoss.Data
             File.WriteAllText(FILENAME, json);
         }
 
-        public CVclass? GetItem(string ItemId)
+        public Notfication? GetItem(string ItemId)
         {
             return Items.FirstOrDefault(p => p.Id == ItemId);
         }
-        public void AddItem(CVclass item) => Items.Add(item);
-        public void RemoveItemt(CVclass item) => Items.Remove(item);
+        public void AddItem(Notfication item) => Items.Add(item);
+        public void RemoveItemt(Notfication item) => Items.Remove(item);
         public void RemoveItem(string id)
         {
             var item = Items.FirstOrDefault(x => x.Id == id);
             if (item is not null)
                 Items.Remove(item);
         }
-        public void UpdateItem(CVclass item)
+        public void UpdateItem(Notfication item)
         {
             RemoveItem(item.Id);
             Items.Add(item);
         }
-
     }
 }

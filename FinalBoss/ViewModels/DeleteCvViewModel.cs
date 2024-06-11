@@ -13,11 +13,12 @@ using System.Windows.Controls;
 
 namespace FinalBoss.ViewModels
 {
-    public class LookCvViewModel : ViewModel, INotifyPropertyChanged
+    public class DeleteCvViewModel : ViewModel, INotifyPropertyChanged
     {
         public AppDbCountextCv AppDbCountextCv = new AppDbCountextCv();
 
         private Page? currentPage;
+        private string name;
 
         public Page? CurrentPage
         {
@@ -25,39 +26,47 @@ namespace FinalBoss.ViewModels
             set { currentPage = value; OnPropertyChanged(); }
         }
 
-        private readonly INavigationService navigationService;
-        public RelayCommand ShowCvs { get; set; }
-        public RelayCommand DeleteCanacsiaBack { get; set; }
-        public RelayCommand WriteNotfication { get; set; }
+        public string Name { get => name; set { name = value; OnPropertyChanged(); } }
 
-        public LookCvViewModel(INavigationService navigationService)
+        private readonly INavigationService navigationService;
+        public RelayCommand CvDelete { get; set; }
+        public RelayCommand CreateCvGo { get; set; }
+        public RelayCommand LookVacansiaGo { get; set; }
+
+        public DeleteCvViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
-            ShowCvs = new(Show);
-            DeleteCanacsiaBack = new(DeleteVacansiaBack);
-            WriteNotfication = new(WriteNot);
+            CvDelete = new(DeleteCv);
+            CreateCvGo = new(CvBack);
+            LookVacansiaGo = new(LookVacansia);
         }
 
-        private void Show(object? obj)
+        private void DeleteCv(object? obj)
         {
+            var Cv = AppDbCountextCv.Items.FirstOrDefault(n => n.Name == Name);
 
+            if (Cv != null)
+            {
+                AppDbCountextCv.RemoveItemt(Cv);
+                AppDbCountextCv.SaveChanges();
+
+                Name = "";
+            }
         }
 
-        private void DeleteVacansiaBack(object? obj)
+        private void CvBack(object? obj)
         {
             //-----------------------------------------------------
-            navigationService.Navigate<DeleteVacansiaPage, DeleteVacansiaViewModel>();
+            navigationService.Navigate<WorkerCvPage, WorkerCvViewModel>();
             //-----------------------------------------------------
         }
 
-        private void WriteNot(object? obj)
+        private void LookVacansia(object? obj)
         {
             //-----------------------------------------------------
-            navigationService.Navigate<NotficationPage, NotficationViewModel>();
+            navigationService.Navigate<LookAtVacansia, LookAtVacansiaViewModel>();
             //-----------------------------------------------------
         }
-
-
 
         //-----------------------------------------------------
         public event PropertyChangedEventHandler? PropertyChanged;

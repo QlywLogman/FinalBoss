@@ -15,6 +15,7 @@
     <None Remove="Pictures\globe.png" />
     <None Remove="Pictures\login.png" />
     <None Remove="Pictures\management.png" />
+    <None Remove="Pictures\search.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
     <Resource Include="Pictures\globe.png" />
     <Resource Include="Pictures\login.png" />
     <Resource Include="Pictures\management.png" />
+    <Resource Include="Pictures\search.png" />
   </ItemGroup>
 
 </Project>

@@ -37,6 +37,10 @@ public partial class App : Application
         MainContainer.RegisterSingleton<WorkerCvViewModel>();
         MainContainer.RegisterSingleton<DeleteVacansiaViewModel>();
         MainContainer.RegisterSingleton<LookCvViewModel>();
+        MainContainer.RegisterSingleton<DeleteCvViewModel>();
+        MainContainer.RegisterSingleton<LookAtVacansiaViewModel>();
+        MainContainer.RegisterSingleton<NotficationViewModel>();
+        MainContainer.RegisterSingleton<LookNotficationViewModel>();
     }
 
     private void AddViews()
@@ -48,6 +52,10 @@ public partial class App : Application
         MainContainer.RegisterSingleton<WorkerCvPage>();
         MainContainer.RegisterSingleton<DeleteVacansiaPage>();
         MainContainer.RegisterSingleton<LookCvPage>();
+        MainContainer.RegisterSingleton<DeleteCvPage>();
+        MainContainer.RegisterSingleton<LookAtVacansia>();
+        MainContainer.RegisterSingleton<NotficationPage>();
+        MainContainer.RegisterSingleton<LookNotficationPage>();
     }
 
     protected override void OnStartup(StartupEventArgs e)
