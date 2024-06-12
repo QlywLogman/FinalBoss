@@ -13,7 +13,7 @@ namespace FinalBoss.Data
 {
     public class AppDbCountextCv : Entity
     {
-        public ObservableCollection<CVclass> Items { get; set; } = new();
+        public ObservableCollection<CVclass> Items { get; set; }
 
         private string FILENAME { get; set; }
 

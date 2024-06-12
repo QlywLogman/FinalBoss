@@ -15,10 +15,9 @@ namespace FinalBoss.ViewModels
 {
     public class LookCvViewModel : ViewModel, INotifyPropertyChanged
     {
-        public AppDbCountextCv AppDbCountextCv = new AppDbCountextCv();
+        public AppDbCountextCv AppDbCountextCv {  get; set; }
 
         private Page? currentPage;
-
         public Page? CurrentPage
         {
             get => currentPage;
@@ -30,12 +29,13 @@ namespace FinalBoss.ViewModels
         public RelayCommand DeleteCanacsiaBack { get; set; }
         public RelayCommand WriteNotfication { get; set; }
 
-        public LookCvViewModel(INavigationService navigationService)
+        public LookCvViewModel(INavigationService navigationService, AppDbCountextCv appDbCountextCv)
         {
             this.navigationService = navigationService;
             ShowCvs = new(Show);
             DeleteCanacsiaBack = new(DeleteVacansiaBack);
             WriteNotfication = new(WriteNot);
+            AppDbCountextCv = appDbCountextCv;
         }
 
         private void Show(object? obj)

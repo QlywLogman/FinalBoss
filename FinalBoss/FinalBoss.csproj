@@ -10,11 +10,12 @@
 
   <ItemGroup>
     <None Remove="Pictures\16636068553.png" />
+    <None Remove="Pictures\account.png" />
     <None Remove="Pictures\check.png" />
     <None Remove="Pictures\delete.png" />
     <None Remove="Pictures\globe.png" />
-    <None Remove="Pictures\login.png" />
     <None Remove="Pictures\management.png" />
+    <None Remove="Pictures\notification-bell.png" />
     <None Remove="Pictures\search.png" />
   </ItemGroup>
 
@@ -25,11 +26,12 @@
 
   <ItemGroup>
     <Resource Include="Pictures\16636068553.png" />
+    <Resource Include="Pictures\account.png" />
     <Resource Include="Pictures\check.png" />
     <Resource Include="Pictures\delete.png" />
     <Resource Include="Pictures\globe.png" />
-    <Resource Include="Pictures\login.png" />
     <Resource Include="Pictures\management.png" />
+    <Resource Include="Pictures\notification-bell.png" />
     <Resource Include="Pictures\search.png" />
   </ItemGroup>
 

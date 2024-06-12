@@ -25,6 +25,9 @@ public partial class App : Application
     private void AddOtherServices()
     {
         MainContainer.RegisterSingleton<AppDbContext>();
+        MainContainer.RegisterSingleton<AppDbCountextVacansia>();
+        MainContainer.RegisterSingleton<AppDbCountextCv>();
+        MainContainer.RegisterSingleton<AppDbCountextNotfication>();
         MainContainer.RegisterSingleton<INavigationService, NavigationService>();
     }
 

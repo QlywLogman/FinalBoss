@@ -35,14 +35,14 @@ namespace FinalBoss.ViewModels
         public string Date { get => date; set { date = value; OnPropertyChanged(); } }
 
         private readonly INavigationService navigationService;
-        public RelayCommand CreateNotfication { get; set; }
-        public RelayCommand LookAtCvBack { get; set; }
+        public RelayCommand SendNotfication { get; set; }
+        public RelayCommand LookCvBack { get; set; }
 
         public NotficationViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
-            CreateNotfication = new(CreateNot);
-            LookAtCvBack = new(LookCvBack);
+            SendNotfication = new(CreateNot);
+            LookCvBack = new(LokCvBck);
         }
 
         private void CreateNot(object? obj)
@@ -61,7 +61,7 @@ namespace FinalBoss.ViewModels
             Date = "";
         }
 
-        private void LookCvBack(object? obj)
+        private void LokCvBck(object? obj)
         {
             //-----------------------------------------------------
             navigationService.Navigate<LookCvPage, LookCvViewModel>();

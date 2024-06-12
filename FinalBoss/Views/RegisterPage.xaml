@@ -36,6 +36,11 @@
                Grid.Row="1" Grid.Column="1" Width="60" Height="60"/>
             <Label Grid.Row="0" Grid.Column="2" Content=" Register" Width="200" Height="65" 
                    FontSize="50" FontFamily="Times New Roman"></Label>
+
+            <Button Grid.Row="13"  FontFamily="Times New Roman" Grid.Column="0" Width="35" Height="35" 
+        FontSize="30" Style="{DynamicResource MaterialDesignFlatButton}" Command="{Binding BackLogOrReg}">
+                <Image Source="pack://application:,,,/FinalBoss;component/Pictures/arrow.png" Width="20" Height="30"/>
+            </Button>
         </Grid>
 
         <Label Grid.Row="1" Grid.Column="1" Content="   Name :" Width="200" Height="23" 
@@ -71,8 +76,8 @@
         <Grid Grid.Row="11" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="205" ></ColumnDefinition>
-                <ColumnDefinition Width="140" ></ColumnDefinition>
-                <ColumnDefinition Width="140" ></ColumnDefinition>
+                <ColumnDefinition Width="110" ></ColumnDefinition>
+                <ColumnDefinition Width="110" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <RadioButton Grid.Row="9" Grid.Column="1" Width="140" Height="30"  FontSize="16" FontFamily="Times New Roman" 

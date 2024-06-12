@@ -13,7 +13,7 @@ namespace FinalBoss.Data
 {
     public class AppDbCountextNotfication : Entity
     {
-        public ObservableCollection<Notfication> Items { get; set; } = new();
+        public ObservableCollection<Notfication> Items { get; set; }
 
         private string FILENAME { get; set; }
 

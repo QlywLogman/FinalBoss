@@ -23,7 +23,7 @@
             <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Image Source="pack://application:,,,/FinalBoss;component/Pictures/login.png" 
+        <Image Source="pack://application:,,,/FinalBoss;component/Pictures/account.png" 
                Grid.Row="1" Width="100" Height="100"/>
 
         <Label Grid.Row="2" Grid.Column="0" Content=" Name : " Width="150" Height="28" 
@@ -40,9 +40,9 @@
 
         <Grid Grid.Row="6" Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" ></ColumnDefinition>
-                <ColumnDefinition Width="140" ></ColumnDefinition>
-                <ColumnDefinition Width="140" ></ColumnDefinition>
+                <ColumnDefinition Width="225" ></ColumnDefinition>
+                <ColumnDefinition Width="110" ></ColumnDefinition>
+                <ColumnDefinition Width="110" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <RadioButton Grid.Row="9" Grid.Column="1" Width="120" Height="25"  FontSize="16" FontFamily="Times New Roman" 
@@ -51,7 +51,8 @@
                            GroupName="GrupWORoVAN" Content="Worker" IsChecked="{Binding IsSelectedWorker, Mode=TwoWay}"/>
         </Grid>
 
-        <Button Grid.Row="7" Grid.Column="0" Width="120" Height="23" 
+
+            <Button Grid.Row="7" Grid.Column="0" Width="120" Height="23" 
                     FontFamily="Times New Roman" Content="Login" FontSize="14" Command="{Binding LogInCommand}">
         </Button>
 

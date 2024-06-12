@@ -43,12 +43,15 @@ namespace FinalBoss.ViewModels
 
         private readonly INavigationService navigationService;
         public RelayCommand WriteRegFile { get; set; }
+        public RelayCommand BackLogOrReg { get; set; }
+
 
 
         public RegisterPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
             WriteRegFile = new(Add);
+            BackLogOrReg = new(BackLoOrRe);
         }
 
         private void Add(object? obj)
@@ -74,7 +77,7 @@ namespace FinalBoss.ViewModels
             IsSelectedWorker = false;
         }
 
-        private void RegOpen(object? obj)
+        private void BackLoOrRe(object? obj)
         {
             //-----------------------------------------------------
             navigationService.Navigate<LogOrRegPage, LogOrRegPageModel>();

@@ -15,7 +15,7 @@ namespace FinalBoss.ViewModels
 {
     public class LookAtVacansiaViewModel : ViewModel, INotifyPropertyChanged
     {
-        public AppDbCountextVacansia AppDbCountextVacansia = new AppDbCountextVacansia();
+        public AppDbCountextVacansia AppDbCountextVacansia { get; set; }
 
         private Page? currentPage;
 
@@ -30,12 +30,13 @@ namespace FinalBoss.ViewModels
         public RelayCommand DeleteCvBack { get; set; }
         public RelayCommand LookNotfication { get; set; }
 
-        public LookAtVacansiaViewModel(INavigationService navigationService)
+        public LookAtVacansiaViewModel(INavigationService navigationService, AppDbCountextVacansia appDbCountextVacansia)
         {
             this.navigationService = navigationService;
             ShowVacansias = new(ShowVac);
             DeleteCvBack = new(DelCvBack);
             LookNotfication = new(LookNot);
+            AppDbCountextVacansia = appDbCountextVacansia;
         }
 
         private void ShowVac(object? obj)

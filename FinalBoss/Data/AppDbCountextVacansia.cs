@@ -13,7 +13,7 @@ namespace FinalBoss.Data
 {
     public class AppDbCountextVacansia : Entity
     {
-        public ObservableCollection<VacansiaClass> Items { get; set; } = new();
+        public ObservableCollection<VacansiaClass> Items { get; set; }
 
         private string FILENAME { get; set; }
 

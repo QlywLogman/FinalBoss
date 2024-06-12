@@ -11,8 +11,6 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
-            <RowDefinition Height="20" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -50,60 +48,20 @@
                 </Button>
             </Grid>
         </Grid>
-        
-        <Grid Grid.Row="1" Grid.Column="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" Content="Name             |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="1" Content="Field              |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
 
-            <Label Grid.Row="0" Grid.Column="2" Content="Univerted     |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="3" Content="Languages     |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="4" Content="Dawn           |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="5" Content="Phone           " Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-        </Grid>
-        
-        <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" 
-                   Height="2" Fill="Black" VerticalAlignment="Top" Margin="0,5"/>
-
-        <ListView Grid.Row="3" Grid.Column="0" Width="650" Height="430" ItemsSource="{Binding appDbCountextCv.Items}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding Name}" />
-                        <TextBlock Grid.Column="1" Text="{Binding Field}" />
-                        <TextBlock Grid.Column="2" Text="{Binding Univerted}" />
-                        <TextBlock Grid.Column="3" Text="{Binding Languages}" />
-                        <TextBlock Grid.Column="4" Text="{Binding Dawn}" />
-                        <TextBlock Grid.Column="5" Text="{Binding Phone}" />
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView Grid.Row="2" Grid.Column="0" Width="650" Height="500" ItemsSource="{Binding appDbCountextCv.Items}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="110"></GridViewColumn>
+                    <GridViewColumn Header="Field" DisplayMemberBinding="{Binding Field}" Width="110"></GridViewColumn>
+                    <GridViewColumn Header="Univerted" DisplayMemberBinding="{Binding Univerted}" Width="110"></GridViewColumn>
+                    <GridViewColumn Header="Languages" DisplayMemberBinding="{Binding Languages}" Width="110"></GridViewColumn>
+                    <GridViewColumn Header="Dawn" DisplayMemberBinding="{Binding Dawn}" Width="110"></GridViewColumn>
+                    <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding Phone}" Width="110"></GridViewColumn>
+                </GridView>
+            </ListView.View>
         </ListView>
     </Grid>
 </Page>

@@ -11,8 +11,6 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="35" ></RowDefinition>
-            <RowDefinition Height="20" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -51,59 +49,17 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-
-            <Label Grid.Row="0" Grid.Column="0" Content="Name             |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="1" Content="Title              |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="2" Content="Salary     |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="3" Content="Location     |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="4" Content="JobType         |" Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-
-            <Label Grid.Row="0" Grid.Column="5" Content="ContactEmail           " Width="100" Height="28" 
-                 FontSize="16" FontFamily="Times New Roman" ></Label>
-        </Grid>
-
-        <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" 
-                   Height="2" Fill="Black" VerticalAlignment="Top" Margin="0,5"/>
-
-        <ListView Grid.Row="3" Grid.Column="0" Width="650" Height="430" ItemsSource="{Binding appDbCountextVacansia.Items}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding Name}" />
-                        <TextBlock Grid.Column="1" Text="{Binding Title}" />
-                        <TextBlock Grid.Column="2" Text="{Binding Salary}" />
-                        <TextBlock Grid.Column="3" Text="{Binding Location}" />
-                        <TextBlock Grid.Column="4" Text="{Binding JobType}" />
-                        <TextBlock Grid.Column="5" Text="{Binding ContactEmail}" />
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView Grid.Row="1" Grid.Column="0" Width="650" Height="500" ItemsSource="{Binding AppDbCountextVacansia.Items}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Salary" DisplayMemberBinding="{Binding Salary}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}"></GridViewColumn>
+                    <GridViewColumn Header="JobType" DisplayMemberBinding="{Binding JobType}"></GridViewColumn>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding ContactEmail}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
         </ListView>
     </Grid>
 </Page>

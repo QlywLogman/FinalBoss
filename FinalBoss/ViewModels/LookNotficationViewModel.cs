@@ -15,7 +15,7 @@ namespace FinalBoss.ViewModels
 {
     public class LookNotficationViewModel : ViewModel, INotifyPropertyChanged
     {
-        public AppDbCountextNotfication AppDbCountextNotfication = new AppDbCountextNotfication();
+        public AppDbCountextNotfication appDbCountextNotfication { get; set; }
 
         private Page? currentPage;
 
@@ -29,11 +29,12 @@ namespace FinalBoss.ViewModels
         public RelayCommand ShowNotfications { get; set; }
         public RelayCommand LookVacansiaBack { get; set; }
 
-        public LookNotficationViewModel(INavigationService navigationService)
+        public LookNotficationViewModel(INavigationService navigationService, AppDbCountextNotfication appDbCountextNotfication)
         {
             this.navigationService = navigationService;
             ShowNotfications = new(ShowNot);
             LookVacansiaBack = new(LookVacBack);
+            AppDbCountextNotfication appDbCountextNotfication1;
         }
 
         private void ShowNot(object? obj)
